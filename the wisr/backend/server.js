@@ -1,22 +1,14 @@
-const express = require('express')
-const bodyPaser = require('body-parser')
+const express = require('express');
+const app = express();
+const {Sequelize} = require('sequelize');
+const path = require('path');
+const cors = require('cors');
 
+require('dotenv').config();
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extends: false}));
 
-const app = express()
-
-
-app.use(express.json())
-app.use(bodyPaser.json())
-
-app.get('/', (req, res) => {
-    res.send('cool man')
-})
-
-
-// app.use('api/user', userRoute)
-
-const PORT = 5000
-
-app.listen(() => {
-    console.log(`Server ruuning on port ${PORT}`);
+app.listen(4005, () => {
+    console.log('server is running on port 4005');
 })
