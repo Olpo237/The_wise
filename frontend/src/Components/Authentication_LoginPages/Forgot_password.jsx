@@ -1,14 +1,10 @@
-
+import { Link } from 'react-router-dom'
 import './Forgot_password.css'
 import email_icon from '../../assets/images/email-icon.png'
 export const Forgot_password = () => {
   return (
     <>
 
-<header>
-      <div className="back"></div>
-      <div className="logo"></div>
-    </header>
     <div className="container">
 <div className="pwd_container">
     <h3>Forgot your password?</h3>
@@ -18,8 +14,9 @@ export const Forgot_password = () => {
               <img src={email_icon} alt="" />
               <input type="email"  placeholder="Enter your email" />
             </div>
-            
+            <Link to="/otpauthentication">
             <button className='otp-container' >Get OTP</button>
+            </Link>
             
 </div>
 </div>
